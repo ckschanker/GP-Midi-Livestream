@@ -34,7 +34,7 @@ def send_tf5(command):
 
 
 def main():
-    midi_destination = MIDIDestination("midi_livestream")
+    midi_destination = MIDIDestination("midi_tf5")
 
     while True:
         midi_input = midi_destination.recv()

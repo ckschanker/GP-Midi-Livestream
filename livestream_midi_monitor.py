@@ -3,7 +3,7 @@ import sys
 import socket
 from simplecoremidi import MIDIDestination
 
-tf5_ip = "192.168.0.128"
+tf5_ip = "192.168.110.061"
 tf5_port = 49280
 
 def send_tf5(command):

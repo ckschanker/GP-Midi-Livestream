@@ -1,0 +1,96 @@
+# crossover_telnet_commands.yaml
+#
+# This is the config/command list for the Ross Crossover 16 video switcher.
+#
+# Switching unit's IP address and telnet port
+HOST_IP: '192.168.110.32'
+HOST_PORT: '2100'
+
+
+input_1:
+  name: 'Camera 1'
+  crossover_code: '05'
+  midi_cue_cut: '(144, 1, 0)'
+  midi_cue_autotrans: '(144, 1, 1)'
+  keyboard_input: '1'
+
+input_2:
+  name: "Camera 2"
+  crossover_code: '08'
+  midi_cue_cut: '(144, 2, 0)'
+  midi_cue_autotrans: '(144, 2, 1)'
+  keyboard_input: '2'
+
+input_3:
+  name: "Camera 3"
+  crossover_code: '0e'
+  midi_cue_cut: '(144, 3, 0)'
+  midi_cue_autotrans: '(144, 3, 1)'
+  keyboard_input: '3'
+
+input_4:
+  name: "Camera 4"
+  crossover_code: '0b'
+  midi_cue_cut: '(144, 4, 0)'
+  midi_cue_autotrans: '(144, 4, 1)'
+  keyboard_input: '4'
+
+input_5:
+  name: "Camera 5"
+  crossover_code: '0c'
+  midi_cue_cut: '(144, 5, 0)'
+  midi_cue_autotrans: '(144, 5, 1)'
+  keyboard_input: '5'
+
+input_6:
+  name: "Camera 6"
+  crossover_code: '0d'
+  midi_cue_cut: '(144, 6, 0)'
+  midi_cue_autotrans: '(144, 6, 1)'
+  keyboard_input: '6'
+
+input_7:
+  name: "PP Center"
+  crossover_code: '02'
+  midi_cue_cut: '(144, 7, 0)'
+  midi_cue_autotrans: '(144, 7, 1)'
+  keyboard_input: '7'
+
+input_8:
+  name: "PP Side"
+  crossover_code: '01'
+  midi_cue_cut: '(144, 8, 0)'
+  midi_cue_autotrans: '(144, 8, 1)'
+  keyboard_input: '8'
+
+input_9:
+  name: "PP Slave"
+  crossover_code: '04'
+  midi_cue_cut: '(144, 9, 0)'
+  midi_cue_autotrans: '(144, 9, 1)'
+  keyboard_input: '9'
+
+input_10:
+  name: "PP Right"
+  crossover_code: '03'
+  midi_cue_cut: '(144, 10, 0)'
+  midi_cue_autotrans: '(144, 10, 1)'
+  keyboard_input: '1'
+
+input_11:
+  name: "Fill"
+  crossover_code: '07'
+  midi_cue_cut: '(144, 11, 0)'
+  midi_cue_autotrans: '(144, 11, 1)'
+
+#input_12:
+#  name: "Key"
+#  crossover_code: '06'
+#  midi_cue_cut: '(144, 12, 0)'
+#  midi_cue_autotrans: '(144, 12, 1)'
+
+black:
+  name: "Black"
+  crossover_code: '00'
+  midi_cue_cut: '(144, 0, 0)'
+  midi_cue_autotrans: '(144, 0, 1)'

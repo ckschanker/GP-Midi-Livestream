@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>GP Remote</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Corey Schanker">
+    <meta name="generator" content="Hugo 0.98.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+
+  </head>
+
+  <body>
+    <main class="d-flex flex-nowrap">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center label">Remote Switcher</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row text-center">
+                <div class="col-sm-2">
+                  <button id="input_1">Cam 1</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_2">Cam 2</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_3">Cam 3</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_4">Cam 4</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_5">Cam 5</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_6">Cam 6</button>
+                </div>
+
+                <div class="col-sm-2">
+                  <button id="input_7">Center</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_8">L/R</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_9">TV</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_10">Slave</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_11">Fill</button>
+                </div>
+                <div class="col-sm-2">
+                  <button id="input_12">Black</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row seperator">
+            <div class="col-lg-12">
+              <div class="row text-center center">
+                <div class="col-sm-4"></div>
+
+                <div class="col-sm-1">
+                  <h3 class="d-inline">Cut</h3>
+                </div>
+                <div class="col-sm-2">
+                  
+
+                  <label class="switch inline-block">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col-sm-1">
+                  <h3 class="d-inline">Auto</h3>
+                </div>
+
+                <div class="col-sm-4"></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        
+      </div>
+    </main>
+    <script src="{{ url_for('static', filename= 'js/frontend.js') }}"></script>
+  </body>
+</html>

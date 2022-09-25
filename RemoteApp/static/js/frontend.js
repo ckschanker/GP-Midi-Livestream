@@ -1,5 +1,5 @@
 "use strict";
-var network_address = "http://192.168.110.216:5000/";
+var network_address = "http://192.168.110.124:5000/";
 var switch_mode = 0;
 
 // HyperDeck control elements on the HTML page

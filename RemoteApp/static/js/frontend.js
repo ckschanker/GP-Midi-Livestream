@@ -1,5 +1,5 @@
 "use strict";
-var network_address = "http://127.0.0.1:5000/";
+var network_address = "http://192.168.110.216:5000/";
 var switch_mode = 0;
 
 // HyperDeck control elements on the HTML page
@@ -17,12 +17,14 @@ var input_11    = document.getElementById("input_11");
 var input_12    = document.getElementById("input_12");
 
 function send_mess(button_num) {
+    var isChecked=document.getElementById("transType").checked;
+
     var xhr = new XMLHttpRequest();
     xhr.open("POST", network_address, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
         button: button_num,
-        mode: 0
+        mode: isChecked
     }));
 }
 

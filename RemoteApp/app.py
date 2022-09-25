@@ -17,8 +17,14 @@ def button():
 
     switcher_code = request_data['button']
     switcher_mode = request_data['mode']
+    
+    if(switcher_mode == False):
+        switcher.remote_switch(switcher_code, "cut")
 
-    switcher.remote_switch(switcher_code, "cut")
-
-
+    else:
+        switcher.remote_switch(switcher_code, "autotrans")
     return "0"
+
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=5000)

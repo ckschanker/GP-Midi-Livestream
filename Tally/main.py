@@ -126,8 +126,6 @@ class Tally:
             self.board.digital[13].write(0)
 
 
-
-
     def update(self):  # Number, 'cut' or 'autotrans'
         try:
             with telnetlib.Telnet(self.crossover_ip, self.crossover_port, 1) as telnet_connection:
@@ -149,14 +147,9 @@ class Tally:
             print("\tAttempted a Switch but Switcher Not Connected")
 
 
-        # except:
-        #     print(f"\n --------------------------------------------------------------")
-        #     print(f"Programmed & Corey is Sad :( \n Error: {sys.exc_info()[0]}")
-        #     print(f"\n --------------------------------------------------------------")
-        #     exit()
-
 if __name__ == '__main__':
     tally = Tally()
 
     while True:
         tally.update()
+        time.sleep(0.1)

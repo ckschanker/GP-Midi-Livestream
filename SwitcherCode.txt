@@ -1,0 +1,6 @@
+Cam 1: 05
+Cam 2: 08
+Cam 3: 0e
+Cam 4: 0b
+Cam 5: 0c
+Cam 6: 04

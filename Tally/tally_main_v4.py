@@ -8,60 +8,55 @@ import pyfirmata, time, socket, select, string, sys, re
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.settimeout(10)
 
-# board = None
-
 #Tally Updates
-def updateTally():
+def updateTally(board, current_program, current_preview):
     # Camera 1
-    board.digital[2].write( 1 if current_program == "0300c105" else 0 ) # Program
-    board.digital[3].write( 1 if current_preview == "0300c205" else 0 ) # Preview
+    board.digital[2].write( 1 if current_program == "05" else 0 ) # Program
+    board.digital[3].write( 1 if current_preview == "05" else 0 ) # Preview
 
     # Camera 2
-    board.digital[4].write( 1 if current_program == "0300c108" else 0 ) # Program
-    board.digital[5].write( 1 if current_preview == "0300c208" else 0 ) # Preview
+    board.digital[4].write( 1 if current_program == "08" else 0 ) # Program
+    board.digital[5].write( 1 if current_preview == "08" else 0 ) # Preview
 
     # Camera 3
-    board.digital[6].write( 1 if current_program == "0300c10e" else 0 ) # Program
-    board.digital[7].write( 1 if current_preview == "0300c20e" else 0 ) # Preview
+    board.digital[6].write( 1 if current_program == "0e" else 0 ) # Program
+    board.digital[7].write( 1 if current_preview == "0e" else 0 ) # Preview
 
     # Camera 4
-    board.digital[8].write( 1 if current_program == "0300c10b" else 0 ) # Program
-    board.digital[9].write( 1 if current_preview == "0300c20b" else 0 ) # Preview
+    board.digital[8].write( 1 if current_program == "0b" else 0 ) # Program
+    board.digital[9].write( 1 if current_preview == "0b" else 0 ) # Preview
 
     # Camera 5
-    board.digital[10].write( 1 if current_program == "0300c10c" else 0 ) # Program
-    board.digital[11].write( 1 if current_preview == "0300c20c" else 0 ) # Preview
+    board.digital[10].write( 1 if current_program == "0c" else 0 ) # Program
+    board.digital[11].write( 1 if current_preview == "0c" else 0 ) # Preview
 
     # Camera 6
-    board.digital[12].write( 1 if current_program == "0300c10d" else 0 ) # Program
-    board.digital[13].write( 1 if current_preview == "0300c20d" else 0 ) # Preview
+    board.digital[12].write( 1 if current_program == "0d" else 0 ) # Program
+    board.digital[13].write( 1 if current_preview == "0d" else 0 ) # Preview
 
 
 
 #Swither Updates
 def getSwitcher(current_program, current_preview):
-	#Get Program
-	s.sendall(b"print(injectGVG100command('020041'))\n")
-	time.sleep(0.01)
-	data = s.recv(256).decode("utf-8")
+	# Send code for Program and Preview
+	s.sendall(b"print(injectGVG100command('020041'))\n") # Command for Program
+	s.sendall(b"print(injectGVG100command('020042'))\n") # Command for Preview
+
+	time.sleep(0.05)
+
+	data = s.recv(512).decode("utf-8")
 
 	for x in data.split():
 		if x.find("0300c1") != -1:
-			current_program = x
-			break
+			current_program = x[6:]
 
-	# Get Preview
-	s.sendall(b"print(injectGVG100command('020042'))\n")
-	time.sleep(0.01)
-	data = s.recv(256).decode("utf-8")
-	for x in data.split():
 		if x.find("0300c2") != -1:
-			current_preview = x
-			break
+			current_preview = x[6:]
+
 	return current_program, current_preview
 
 def main():
-	print("Starting Tally System - v3.0")
+	print("Starting Tally System - v3.1")
 	current_program = " "
 	current_preview = " "
 
@@ -99,8 +94,8 @@ def main():
 				print(f"PGM: {current_program}, PVM: {current_preview}")
 				previous_program = current_program
 				previous_preview = current_preview
-				#updateTally()
-				time.sleep(0.1)
+				updateTally()
+				time.sleep(0.05)
 
 	except KeyboardInterrupt:
 		print ("Received User Interrupt") 

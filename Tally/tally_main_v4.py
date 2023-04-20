@@ -94,7 +94,7 @@ def main():
 				print(f"PGM: {current_program}, PVM: {current_preview}")
 				previous_program = current_program
 				previous_preview = current_preview
-				updateTally()
+				updateTally(board, current_program, current_preview)
 				time.sleep(0.05)
 
 	except KeyboardInterrupt:
